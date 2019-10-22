@@ -1,0 +1,87 @@
+<html>
+<head>
+
+	<title>Vue JS</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+	
+	
+<body>	
+
+
+  <div background ='green' id ='app'>
+  	Select Branch:
+  	<select v-model='selected_branch'>
+  		<option v-for="branch in branches" :value="branch">{{branch.name}}</option>
+
+  	</select>
+  	<br>
+  	<br>
+  	<label>Select Movie</label>
+  	<select>
+  		
+  		<option v-for="movie in selected_branch.movies" :value="movie.name">{{movie.name}}</option>
+
+  	</select>
+  
+  </div>
+  
+</form>
+</body>
+
+<script type="text/javascript">
+	new Vue({
+		el:'#app',
+		data:{
+			selected_branch:' ',
+			
+		branches:[ 
+  {name:'Cinema Baguio',
+ 		 movies:[ 
+			 {name:'THE JOKER'}, 
+			 {name:'INTERSTELLAR'},
+			 {name:'SHAWSHACK REDEMPTION'},
+			 {name:'PULP FICTION'},
+			 {name:'FIGHT CLUB'}
+  		]
+  },
+  {name:'Marikina Cinema ',
+ 		 movies:[ 
+			 {name:'Marikina 1'}, 
+			 {name:'Marikina 2'}, 
+			 {name:'Marikina 3 '},
+			 {name:'Marikina 4 '}	 
+  		]
+  },
+  {name:'Dagupan Cinema',
+ 		 movies:[ 
+			 {name:'Dagupan 1'}, 
+			 {name:'Dagupan 2'}, 
+			 {name:'Dagupan 3 '}, 
+			 {name:'Dagupan 4 '}	 
+  		]
+  },
+  {name:'Jayson Cinema',
+ 		 movies:[ 
+			 {name:'Jayson 1'}, 
+			 {name:'Jayson 2'}, 
+			 {name:'Jayson 3'}, 
+			 {name:'Jayson 4'}
+  		]
+  },
+  {name:'Jaspa Cinema',
+ 		 movies:[ 
+			 {name:'Jaspa 1 '},
+			 {name:'Jaspa 2'}, 
+			 {name:'Jaspa 3'}, 
+			 {name:'Jaspa 4'}
+  		]
+  }
+  ]
+  }	
+	})
+</script>
+
+
+</html>
